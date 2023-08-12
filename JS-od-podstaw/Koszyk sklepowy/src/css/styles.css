@@ -27,3 +27,7 @@ body {
   padding: 4px 8px;
   background-color: rgb(138, 186, 66);
 }
+
+.hidden {
+  display: none;
+}
