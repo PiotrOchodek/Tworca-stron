@@ -19,6 +19,9 @@ function addItem(item) {
 addItem(product1);
 addItem(product2);
 
+//dodaj zniżkę
+const discountContainer = 
+
 if(isNaN(+product2.price)) {
   console.log('Podano niepoprawny typ danych');
 }
