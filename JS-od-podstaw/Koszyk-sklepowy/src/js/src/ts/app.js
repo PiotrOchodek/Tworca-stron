@@ -2,7 +2,10 @@ const product1 = { price: 10, title: 'JS od podstaw' };
 const product2 = { price: '20', title: 'PHP od podstaw' };
 const discount = 10;
 let discountEnabled = false;
+
+// definicje elementow
 const discountElement = document.querySelector('#discount');
+const discountCheckbox = document.querySelector('#add-discount')
 
 //dodaj produkty do tabeli
 const itemsContainer = document.querySelector('#items');
@@ -45,8 +48,7 @@ calculatePrice();
 
 // listeners
 
-document
-.querySelector('#add-discount')
+discountCheckbox
 .addEventListener('click', addDiscount);
 
 // zaznacz checkbox na początku jeśli trzeba
@@ -55,3 +57,6 @@ const discountShouldBeEnabled = +discountElement
 .dataset
 .discountShouldBeEnabled
 
+if (discountShouldBeEnabled) {
+  discountCheckbox.click();
+}
