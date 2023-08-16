@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+  "rootDir": "./JS-od-podstaw/Koszyk-sklepowy",
+  "outDir": "./JS-od-podstaw/Koszyk-sklepowy/src/js",
+  "target": "ES2015"
+  }
+}
