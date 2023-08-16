@@ -2,6 +2,7 @@ const product1 = { price: 10, title: 'JS od podstaw' };
 const product2 = { price: '20', title: 'PHP od podstaw' };
 const discount = 10;
 let discountEnabled = false;
+const discountElement = document.querySelector('#discount');
 
 //dodaj produkty do tabeli
 const itemsContainer = document.querySelector('#items');
@@ -25,7 +26,7 @@ function addDiscount(event) {
   discountEnabled = event.target.checked;
   if(discount > 0) {
     document.querySelector('#discount-amount').innerHTML = -discount;
-    document.querySelector('#discount').classList.toggle('hidden');
+    discountElement.classList.toggle('hidden');
   }
   calculatePrice()
 }
@@ -40,10 +41,17 @@ function calculatePrice() {
   document.querySelector('#total-price').innerHTML = total;
 }
 
-calculatePrice()
+calculatePrice();
 
 // listeners
 
 document
 .querySelector('#add-discount')
 .addEventListener('click', addDiscount);
+
+// zaznacz checkbox na początku jeśli trzeba
+
+const discountShouldBeEnabled = +discountElement
+.dataset
+.discountShouldBeEnabled
+
