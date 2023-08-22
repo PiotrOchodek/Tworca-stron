@@ -16,13 +16,20 @@ function addItem(item) {
   `<tr>
     <td>${counter++}</td>
     <td>${item.title}</td>
-    <td>1</td>
+    <td><input type="number" value="1"></td>
     <td>${item.price}</td>
   </tr>`;
 }
 
 addItem(product1);
 addItem(product2);
+
+// zmien kolor tla wiersza
+function markBg (event) {
+  if (event.target.tagName === 'TD') {
+    event.target.closest('tr').classList.toggle('marked')
+  }
+}
 
 //dodaj zniżkę
 function addDiscount(event) {
@@ -46,10 +53,10 @@ function calculatePrice() {
 
 calculatePrice();
 
-// listeners
+// listenery
+discountCheckbox.addEventListener('click', addDiscount);
+itemsContainer.addEventListener('click' , markBg);
 
-discountCheckbox
-.addEventListener('click', addDiscount);
 
 // zaznacz checkbox na początku jeśli trzeba
 
@@ -59,4 +66,4 @@ const discountShouldBeEnabled = +discountElement
 
 if (discountShouldBeEnabled) {
   discountCheckbox.click();
-}
+} 

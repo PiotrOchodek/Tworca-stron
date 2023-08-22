@@ -18,6 +18,10 @@ body {
   padding: 10px;
 }
 
+.card-table td input {
+  width: 30px;
+}
+
 .card-table th {
   background-color: #ededed;
 }
@@ -30,4 +34,8 @@ body {
 
 .hidden {
   display: none;
+}
+
+.marked {
+  background-color: rgb(249, 184, 99);
 }
